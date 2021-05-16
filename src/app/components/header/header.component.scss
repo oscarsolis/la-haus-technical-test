@@ -1,0 +1,130 @@
+@import 'common/breakpoints';
+@import 'common/colors';
+@import 'common/variables';
+
+.header {
+  height: $navbar-height;
+  width: 100%;
+  border-bottom: 1px solid $lh-bg-gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  position: fixed;
+  padding: 0px 21px 0px 71px;
+  z-index: 5;
+
+  &__brand {
+    width: 125px;
+    height: 24px;
+  }
+
+  &__menu {
+    display: flex;
+
+    .menu__item {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      padding: 0px 20px;
+      color: $lh-jungle-green;
+      cursor: pointer;
+
+      &:hover {
+        border-bottom: 1px solid $lh-sky-blue;
+      }
+    }
+
+    .menu--bold {
+      font-weight: 600;
+    }
+
+    .menu__collapse {
+      border: solid $lh-jungle-green;
+      border-width: 0 1px 1px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(45deg);
+      margin-left: 10px;
+      margin-bottom: 5px;
+
+    }
+  }
+
+  .menu__hamburguer {
+    display: none;
+    margin-right: 10px;
+    cursor: pointer;
+
+    .hamburguer__bar{
+      width: 28px;
+      height: 2px;
+      background-color: $lh-green-gray;
+      margin: 6px 0;
+      transition: 0.4s;
+
+      &--bar3 {
+        width: 25px;
+      }
+    }
+  }
+}
+
+.panel {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 5;
+  transition: transform .3s;
+  transform: translateX(-100%);
+
+  &__open {
+    transform: translateX(0px);
+  }
+
+  .panel__container {
+    position: fixed;
+    width: 60%;
+    height: 100%;
+    z-index: 1;
+    background: #FFFFFF;
+    padding: 20px;
+    box-shadow: 0px 0px 2px $lh-green-gray;;
+
+    .panel__menu {
+      .panel__item {
+        padding: 20px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: $laptop) {
+  .header {
+    padding: 0px 20px;
+    justify-content: flex-start;
+    .menu__hamburguer {
+      display: block;
+    }
+
+    &__menu {
+      display: none;
+    }
+
+    &__brand {
+      overflow: hidden;
+      width: 85px;
+      display: block;
+      width: 30px;
+
+      img {
+        width: auto;
+        display: block;
+        max-width: unset;
+        height: 24px;
+      }
+    }
+  }
+}

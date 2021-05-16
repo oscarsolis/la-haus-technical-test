@@ -1,0 +1,65 @@
+<div class="group">
+  <div class="group__images" [ngSwitch]="realEstate?.realEstatesIds?.length">
+    <ng-container  *ngSwitchCase="0">
+      <div class="image__empty">
+        <img
+          src="assets/images/empty.png"
+          alt="empty-images"
+        />
+      </div>
+    </ng-container>
+    <ng-container  *ngSwitchCase="1">
+      <div class="image__empty">
+        <img
+          src="assets/images/image_1.png"
+          alt="empty-images"
+        />
+      </div>
+    </ng-container>
+    <ng-container  *ngSwitchCase="2">
+      <div class="images__galery images__galery--two">
+        <div class="galery__image galery__image--one relative">
+          <img
+            src="assets/images/image_1.png"
+            alt="image_1"
+          />
+        </div>
+        <div class="galery__image galery__image--two relative">
+          <img
+            src="assets/images/image_2.png"
+            alt="image_2"
+          />
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+      <div class="images__galery">
+        <div class="galery__image galery__image--one relative">
+          <img
+            src="assets/images/image_1.png"
+            alt="image_1"
+          />
+        </div>
+        <div class="galery__image galery__image--two relative">
+          <img
+            src="assets/images/image_2.png"
+            alt="image_2"
+          />
+        </div>
+        <div class="galery__image galery__image--three relative">
+          <img
+            src="assets/images/image_3.png"
+            alt="image_3"
+          />
+          <div class="see_more absolute">
+            +{{ realEstate.realEstatesIds.length - 2 }}
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <h1 class="group__name">{{ realEstate?.name }}</h1>
+  <h3 class="group__subtitle">
+    {{realEstate?.realEstatesIds?.length}} propiedades guardadas
+  </h3>
+</div>

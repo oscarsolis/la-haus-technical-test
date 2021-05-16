@@ -1,0 +1,38 @@
+<nav class="header">
+  <div class="menu__hamburguer" (click)="onClickToggelMenu()">
+    <div class="hamburguer__bar"></div>
+    <div class="hamburguer__bar"></div>
+    <div class="hamburguer__bar hamburguer__bar--bar3"></div>
+  </div>
+  <div class="header__brand">
+    <img src="assets/images/la_haus_desktop_logo.png" alt="la-haus-brand">
+  </div>
+  <ul class="header__menu">
+    <li class="menu__item">
+      <a>Cundinamarca</a>
+    </li>
+    <li class="menu__item">
+      <a>Antioquia</a>
+    </li>
+    <li class="menu__item">
+      <a>Recursos</a>
+    </li>
+    <li class="menu__item menu--bold">
+      <a>
+        Mi Perfil
+        <i class="menu__collapse"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div class="panel" [class.panel__open]="isMobileMenuOpen" (click)="onClickToggelMenu()">
+  <div class="panel__container">
+    <ul class="panel__menu">
+      <li class="panel__item">Cundinamarca</li>
+      <li class="panel__item">Antioquia</li>
+      <li class="panel__item">Recursos</li>
+      <li class="panel__item menu--bold">Mi Perfil</li>
+    </ul>
+  </div>
+</div>

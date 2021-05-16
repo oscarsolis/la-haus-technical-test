@@ -1,0 +1,66 @@
+@import 'common/colors';
+@import 'common/variables';
+@import 'common/breakpoints';
+
+.real-estate {
+
+  &__title {
+    text-align: center;
+    color: $lh-jungle-green;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 32px;
+    padding: $navbar-height + 20px 0px;
+  }
+
+  &__groups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px,auto);
+    grid-gap: 20px;
+  }
+
+  &__create {
+    text-align: center;
+    color: $lh-sky-blue;
+
+    .create__card {
+      cursor: pointer;
+      width: 100%;
+      height: 196px;
+      background-color: $lh-md-blue;
+      border-radius: $border-radius;
+      font-size: 50px;
+      margin-bottom: 21px;
+    }
+  }
+}
+
+
+@media (max-width: $laptop) {
+  .real-estate {
+    padding: 0px 24px 24px 24px;
+
+    &__title {
+      padding-left: 0px;
+      padding-bottom: 60px;
+      padding-left: 0px;
+    }
+
+    &__groups {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+
+@media (max-width: $tablet) {
+  .real-estate {
+    &__groups {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+
